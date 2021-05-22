@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Meta-Tag for this HTML-File -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="description" content="VR - Unser Sonnensystem - Vorlesung | Computergrafik">
+		<meta name="keywords" content="VR, Sonnensystem, Vorlesung, Computergrafik">
+		<meta name="author" content="Kindermann Philipp">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		
+		<!-- include aframe -->
+		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+		
+		<!-- set title for this HTML-File -->
+		<title> Unser Sonnensystem </title>
+	</head>
+
+	<body>
+		<!--Solar-System-Scene-->
+		<!-- 1 day is here 1 second -->
+		<a-scene id="solar-system" 
+				 background="color: #000000"
+				 inspector="" 
+				 keyboard-shortcuts="" 
+				 screenshot="" 
+				 vr-mode-ui="" 
+				 device-orientation-permission-ui=""
+				 
+		>
+			<!-- Assets -->
+			<a-assets id="assets">
+				<img id="sun" src="sun_texture.jpg" alt="sun">
+				<img id="mercury" src="mercury_texture.jpg" alt="mercury">
+				<img id="venus" src="venus_texture.jpg" alt="venus">
+				<img id="earthmoon" src="moon_texture.jpg" alt="earthmoon">
+				<img id="earth" src="earth_texture.jpg" alt="earth">
+				<img id="mars" src="mars_texture.jpg" alt="mars">
+				<img id="jupiter" src="jupiter_texture.jpg" alt="jupiter">
+				<img id="saturn" src="saturn_texture.jpg" alt="saturn">
+				<img id="saturnring" src="saturn_ring_texture.png" alt="saturnring">
+				<img id="uranus" src="uranus_texture.jpg" alt="uranus">
+				<img id="neptune" src="neptune_texture.jpg" alt="neptune">
+				<img id="pluto" src="pluto_texture.jpg" alt="pluto">
+				<img id="cosmos" src="cosmos_texture.jpg" alt="cosmos">
+			</a-assets>
+			
+			<!-- Sphere for sun 
+			
+			<a-entity id="0"
+					  position="0 0 0" 
+					  rotation="0 0 0" 
+			>
+				<a-sphere src="#sun" 
+						  position="0 0 0" 
+						  rotation="0 0 0" 
+						  radius="10" 
+						  segments-height="60" 
+				></a-sphere>
+			</a-entity>
+			-->
+			<!-- Sphere and animation for mercury 
+			<a-entity position="0 0 0" 
+					  rotation="0 0 0" 
+					  animation="property: rotation; to: 0 360 0; loop: true; dur: 88000; easing: linear;"
+			>
+				<a-sphere src="#mercury" 
+						  position="20 0 0" 
+						  rotation="0 0 0" 
+						  radius="0.06" 
+						  segments-height="60" 
+						  animation="property: rotation; to: 0 360 0; loop: true; dur: 58600; easing: linear;"
+				></a-sphere>
+			</a-entity>
+			-->
+			<!-- Sphere and animation for venus 
+			<a-entity position="0 0 0" 
+					  rotation="0 0 0" 
+					  animation="property: rotation; to: 0 360 0; loop: true; dur: 225000; easing: linear;"
+			>
+				<a-sphere src="#venus" 
+						  position="30 0 0" 
+						  rotation="0 0 0" 
+						  radius="0.2" 
+						  segments-height="60" 
+						  animation="property: rotation; to: 0 360 0; loop: true; dur: 116700; easing: linear;"
+				></a-sphere>
+			</a-entity>
+			-->
+			<!-- Sphere and animation for earth and earthmoon -->
+			<a-entity position="0 0 0" 
+					  rotation="0 0 0" 
+					  animation="property: rotation; to: 0 360 0; loop: true; dur: 365000; easing: linear;"
+			>
+				<a-sphere src="#earth" 
+						  position="20 0 0" 
+						  rotation="0 0 0" 
+						  radius="2" 
+						  segments-height="60" 
+						  animation="property: rotation; to: 0 360 0; loop: true; dur: 1000; easing: linear;"
+						  shadow="cast:true; receive:true;"
+				></a-sphere>
+				<a-entity position="20 0 0" 
+						  rotation="0 0 0"
+						  animation="property: rotation; to: 0 360 0; loop: true; dur: 27000; easing: linear;"
+				>
+					<a-sphere src="#earthmoon" 
+							  position="8 0 0"
+							  rotation="0 0 0" 
+							  radius="0.66" 
+							  segments-height="60"
+							  animation="property: rotation; to: 0 360 0; loop: true; dur: 27000; easing: linear;"
+							  shadow="cast:true; receive:true;"
+					></a-sphere>
+				</a-entity>
+			</a-entity>
+			
+			<!-- Sphere and animation for mars
+			<a-entity position="0 0 0" 
+					  rotation="0 0 0" 
+					  animation="property: rotation; to: 0 360 0; loop: true; dur: 687000; easing: linear;"
+			>
+				<a-sphere src="#mars" 
+						  position="50 0 0" 
+						  rotation="0 0 0" 
+						  radius="0.1" 
+						  segments-height="60" 
+						  animation="property: rotation; to: 0 360 0; loop: true; dur: 1050; easing: linear;"
+				></a-sphere>
+			</a-entity>
+			-->
+			<!-- Sphere and animation for jupiter
+			<a-entity position="0 0 0" 
+					  rotation="0 0 0" 
+					  animation="property: rotation; to: 0 360 0; loop: true; dur: 4380000; easing: linear;"
+			>
+				<a-sphere src="#jupiter" 
+						  position="60 0 0" 
+						  rotation="0 0 0" 
+						  radius="2.2" 
+						  segments-height="60" 
+						  animation="property: rotation; to: 0 360 0; loop: true; dur: 415; easing: linear;"
+				></a-sphere>
+			</a-entity>
+			 -->
+			<!-- Sphere and animation for saturn and saturn-ring 
+			<a-entity position="0 0 0" 
+					  rotation="0 0 0" 
+					  animation="property: rotation; to: 0 360 0; loop: true; dur: 10585000; easing: linear;"
+			>
+				<a-sphere src="#saturn" 
+						  position="80 0 0" 
+						  rotation="0 0 0" 
+						  radius="1.8" 
+						  segments-height="60" 
+						  animation="property: rotation; to: 0 360 0; loop: true; dur: 460; easing: linear;"
+				></a-sphere>
+				<a-ring src="#saturnring" 
+						radius-inner="3" 
+						position="80 0 0" 
+						rotation="90 0 0" 
+						radius-outer="3.8" 
+						side="double"
+				></a-ring>
+			</a-entity>
+			-->
+			<!-- Sphere and animation for uranus
+			<a-entity position="0 0 0" 
+					  rotation="0 0 0" 
+					  animation="property: rotation; to: 0 360 0; loop: true; dur: 30660000; easing: linear;"
+			>
+				<a-sphere src="#uranus" 
+						  position="100 0 0" 
+						  rotation="0 0 0" 
+						  radius="0.8" 
+						  segments-height="60" 
+						  animation="property: rotation; to: 0 360 0; loop: true; dur: 700; easing: linear;"
+				></a-sphere>
+			</a-entity>
+			 -->
+			<!-- Sphere and animation for neptune
+			<a-entity position="0 0 0" 
+					  rotation="0 0 0" 
+					  animation="property: rotation; to: 0 360 0; loop: true; dur: 60225000; easing: linear;"
+			>
+				<a-sphere src="#neptune" 
+						  position="120 0 0" 
+						  rotation="0 0 0" 
+						  radius="0.78" 
+						  segments-height="60" 
+						  animation="property: rotation; to: 0 360 0; loop: true; dur: 667; easing: linear;"
+				></a-sphere>
+			</a-entity>
+			 -->
+			<!--Point-Light-->
+			<a-entity position="0 0 0"
+					  rotation="0 0 0" 
+					  light="type: point; castShadow: true; color: #FFF; intensity: 1.5 distance: 50; decay: 1" 
+			></a-entity>
+			
+			<!--Ambient-Light-->
+			<a-entity position="0 0 0"
+					  rotation="0 0 0"
+					  light="type: ambient; color: #BBB"
+			></a-entity>
+			
+			<!-- Skybox -->
+			<a-sky src="#cosmos" 
+				   position="0 0 0"
+				   rotation="0 0 0"
+			></a-sky>
+			
+			<!-- virtual tour title while loading -->
+			<div class="a-loader-title" style="display: inline;">
+				Unser Sonnensystem
+			</div>
+			
+			<!-- Camera -->
+			<a-entity id="camera" 
+					  camera="" 
+					  position="0 1.7 0" 
+					  rotation="0 0 0"
+					  scale="1 1 1"
+					  look-controls="controls: touch;" 
+					  wasd-controls="acceleration: 20;"
+					  movement-controls="constrainToNavMesh: true"
+					  touchEnabled="true"
+			>
+				<!-- Gaze-Icon -->
+				<a-entity id="gaze_icon" 
+						  cursor="fuse: true; fuseTimeout: 1500"
+						  raycaster="far: 25; interval: 1000; objects: .clickable"
+						  geometry="primitive: ring; radiusInner: 0.011; radiusOuter: 0.015 segmentsTheta: 128;"
+						  position="0 0 -1.81"
+						  material="shader: flat; color: #28B9DA;"
+				></a-entity>
+				
+				<!-- Gaze-Icon -->
+				<a-entity id="gaze_icon" 
+						  cursor="fuse: true; fuseTimeout: 1500"
+						  raycaster="far: 25; interval: 1000; objects: .clickable"
+						  geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.027; segmentsTheta: 128;"
+						  position="0 0 -1.8"
+						  material="shader: flat; color: #28B9DA;"
+				></a-entity>
+				
+				<!-- Gaze-Icon
+				<a-entity id="gaze_icon" 
+						  cursor="fuse: true; fuseTimeout: 1500"
+						  raycaster="far: 25; interval: 1000; objects: .clickable"
+						  geometry="primitive: ring; radiusInner: 0.027; radiusOuter: 0.031 segmentsTheta: 128;"
+						  position="0 0 -1.81"
+						  material="shader: flat; color: #000000;"
+				--> 
+				></a-entity>
+			</a-entity>
+		</a-scene>
+	</body>
+</html>
